@@ -1,0 +1,80 @@
+Problem3.txt
+Anya Devgan
+ad3706
+9/29/20
+
+First, the program calculated time results for cubic()
+Below are the runtime results:
+for n = 10, time elapsed = 14293 ns
+for n = 50, time elapsed = 1423345 ns
+for n = 250, time elapsed = 180047068 ns
+for n = 1250, time elapsed = 18257511123 ns
+Based on these results, you can see that the runtime increases as n increases.
+The runtime roughly follows cubic patterns. In other words, the time complexity
+of the algorithm grows "cubic-ly" with respect to the size of the input. So,
+when the input (n) is increased by 5 times, this should result in the program
+taking 5^3 or 125 times as long. This is reflected in the time calculations
+above: the runtime when n = 10 is 14293 ns, whereas the runtime when n = 50 is
+1423345 ns. 14293*(5^3) = 1786625 which is very close to 1423345 ns. Thus, the
+method cubic() satisfies O(n^3).
+
+-----------------------------------------------------------------------------------
+
+Next, the program calculated time results for constant()
+
+Below are the runtime results:
+for n = 10, time elapsed = 924 ns
+for n = 100, time elapsed = 332 ns
+for n = 1000, time elapsed = 328 ns
+for n = 10000, time elapsed = 312 ns
+for n = 100000, time elapsed = 299 ns
+
+Based on these results, you can see that, for the most part, the runtime is
+independent of N. For instances such as n=10 where the runtime result is 
+an outlier and other slightly erratic results, these discrepancies can be
+attributed to noise and memory allocation delays in the computational process. 
+Thus, the method constant() satisfies O(1) and the time complexity of the
+algorithm is constant. 
+
+-----------------------------------------------------------------------------------
+
+Lastly, the program calculated time results for exp()
+
+Below are the runtime results:
+for n = 6, time elapsed = 8423 ns
+for n = 12, time elapsed = 456612 ns
+for n = 24, time elapsed = 1727778688 ns
+
+Based on these results, the runtime increases as N increases. The time complexity
+of the algorithm roughly grows exponentially (2^n) with respect to the size of the
+input (i.e. follows exponential patterns): since the runtime for n = 6 is 8423 ns,
+in order for it to follow the exponential pattern, the runtime for n = 12 should 
+be approximately 8423*(2^6)=539072 because 12 is 6 bigger than 6. The calculated
+run time for n = 12 is 456612 ns, which is similar to 539072 ns. This exponential
+pattern is carried on when comparing  n = 12 and n = 24 runtimes. The ideal runtime
+for the exponential pattern should be 456612*(2^12)=1870282752. This number is 
+very close to the calculated runtime of 1727778688 ns for n = 24. Thus, the method
+exp() satisfies O(2^n).
+
+-----------------------------------------------------------------------------------
+
+NOTE: In all of the above examples, the results may slightly erratic due
+to noise and memory allocation delays.
+
+Upon analysis of these results, it is clear that constant() has the smallest
+runtime, cubic() has the second largest runtime, and exp() has the largest 
+runtime.
+
+Consider the following examples: the runtime of constant() when n=100000 is 299
+ns. Although this n value is much larger than all the other tested n values for
+exp() and cubic(), this time result is the smallest of all results calculated.
+This proves that constant() has the smallest run time. Furthermore, the runtime
+of cubic() when n=10 is 14293 ns and the runtime of exp() when n=12 is 456612 ns.
+Although the n values differ by 2, their corresponding time results indicate an
+extremely large difference in runtime between cubic() and exp(). Since 456612 ns
+is much greater than 14293 ns, it is clear that exp() has the largest runtime
+and cubic() has the second largest runtime.
+
+
+
+
